@@ -7,9 +7,17 @@
 //
 
 #include <iostream>
+#include "Employee.hpp"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+using namespace std;
+
+
+int main() {
+    
+    int dangArray[]={1,2,3,4,5};
+    Employee alex;
+    alex.setid(dangArray);
+    alex.getid();
+    
     return 0;
 }
