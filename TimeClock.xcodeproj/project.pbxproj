@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D20FC3B82269770D00F2849E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D20FC3B72269770D00F2849E /* main.cpp */; };
 		D20FC3C022697D5800F2849E /* Employee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D20FC3BE22697D5800F2849E /* Employee.cpp */; };
-		D20FC3C322697D7300F2849E /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D20FC3C122697D7300F2849E /* Manager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +28,6 @@
 		D20FC3B72269770D00F2849E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D20FC3BE22697D5800F2849E /* Employee.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Employee.cpp; sourceTree = "<group>"; };
 		D20FC3BF22697D5800F2849E /* Employee.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Employee.hpp; sourceTree = "<group>"; };
-		D20FC3C122697D7300F2849E /* Manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Manager.cpp; sourceTree = "<group>"; };
-		D20FC3C222697D7300F2849E /* Manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Manager.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +63,6 @@
 				D20FC3B72269770D00F2849E /* main.cpp */,
 				D20FC3BE22697D5800F2849E /* Employee.cpp */,
 				D20FC3BF22697D5800F2849E /* Employee.hpp */,
-				D20FC3C122697D7300F2849E /* Manager.cpp */,
-				D20FC3C222697D7300F2849E /* Manager.hpp */,
 			);
 			path = TimeClock;
 			sourceTree = "<group>";
@@ -129,7 +124,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D20FC3B82269770D00F2849E /* main.cpp in Sources */,
-				D20FC3C322697D7300F2849E /* Manager.cpp in Sources */,
 				D20FC3C022697D5800F2849E /* Employee.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,11 +20,13 @@ string Employee::getlName(){
 }
 void Employee::getid()
 {
-    //best way to return an array to view? 
+    //best way to return an array to view?
+    cout<<"ID#: ";
     for(int x = 0; x!=5; x++)
     {
-        cout<<id[x]<<endl;
+        cout<<id[x]<<" ";
     }
+    cout<<endl;
 }
 void Employee::setfName(string s)
 {
