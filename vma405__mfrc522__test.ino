@@ -16,8 +16,10 @@ int serNum[5];
   This integer should be the code of Your Mifare card / tag
 */
 //int cards[][5] = {{117,222,140,171,140}};
-int cards[][5] = {{205, 189, 160, 89, 137}};
-
+int cards[2][5] = {{205, 189, 160, 89, 137},
+                   {80, 141,149, 137, 193}};
+                   
+int (*p_array)[2][5] = &cards;
 
 bool access = false;
 
@@ -25,6 +27,9 @@ void setup() {
   Serial.begin(9600);
   SPI.begin();
   rfid.init();
+  e.setEmpID(p_array);
+  e.setFirstName("Fabian");
+  e.setLastName("Hernandez");
   /*
     define VMA100 (UNO) pins 7 & 8 as outputs and put them LOW
   */
@@ -36,9 +41,33 @@ void setup() {
 }
 
 void loop() {
+  //Serial.print(e.getEmpID());
+  validateTag();
+}
+
+void menu() {
+  Serial.print("Main Menu\n");
+  Serial.print("1.Clock In/Out\n");
+  Serial.print("2.Inquiry\n");
+  Serial.print("3.Create new employee\n");
+  while(Serial.available()==0);
+  int num = Serial.parseInt();
+  Serial.print("Present your tag to the reader.\n");
+  if(num == 1){
+    Serial.print("Clock In/Out");
+  }else if(num == 2){
+    
+  }else if(num == 3){
+    if(e.getIsManager()){
+      //Present new menu
+    }else{
+      Serial.print("Manager Access Needed.");
+    }
+  }
+}
+
+void validateTag(){
   if (rfid.isCard()) {
-    e.setFirstName();
-    e.setLastName();
     if (rfid.readCardSerial()) {
       Serial.print(rfid.serNum[0]);
       Serial.print(" ");
@@ -53,7 +82,8 @@ void loop() {
 
       for (int x = 0; x < sizeof(cards); x++) {
         for (int i = 0; i < sizeof(rfid.serNum); i++ ) {
-          if (rfid.serNum[i] != cards[x][i]) {
+          //if (rfid.serNum[i] != cards[x][i]) {
+          if (rfid.serNum[i] != e.getEmpID(i)) {
             access = false;
             break;
           } else {
@@ -95,25 +125,4 @@ void loop() {
     }
   }
   rfid.halt();
-}
-
-void menu() {
-  Serial.print("Main Menu\n");
-  Serial.print("1.Clock In/Out\n");
-  Serial.print("2.Inquiry\n");
-  Serial.print("3.Create new employee\n");
-  while(Serial.available()==0);
-  int num = Serial.parseInt();
-  Serial.print("Present your tag to the reader.");
-  if(num == 1){
-    
-  }else if(num == 2){
-    
-  }else if(num == 3){
-    if(e.getIsManager()){
-      //Present new menu
-    }else{
-      Serial.print("Manager Access Needed.");
-    }
-  }
 }
