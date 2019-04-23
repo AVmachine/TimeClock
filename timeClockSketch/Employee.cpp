@@ -1,3 +1,5 @@
+
+/*
 class Employee {
  int empId[5];
 public:
@@ -8,3 +10,4 @@ public:
    empId = {0};
  };
 };
+*/

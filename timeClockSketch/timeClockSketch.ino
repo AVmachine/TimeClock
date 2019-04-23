@@ -1,9 +1,11 @@
-#include <RFID.h>
+#include <Employee.h>
+#include <SPI.h>
+
 
 void setup() {
   // put your setup code here, to run once:
 
-#include <SPI.h>
+
 #include <RFID.h>
 
 #define SS_PIN 10
@@ -39,7 +41,6 @@ void setup(){
 }
 
 void loop(){
-    
     if(rfid.isCard()){
     
         if(rfid.readCardSerial()){
@@ -102,11 +103,5 @@ void loop(){
     
     
     rfid.halt();
-
-}
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
 
 }

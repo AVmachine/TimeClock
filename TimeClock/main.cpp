@@ -17,7 +17,10 @@ int main() {
     int dangArray[]={1,2,3,4,5};
     Employee alex;
     alex.setid(dangArray);
-    alex.getid();
+    alex.setfName("Alex");
+    alex.setlName("Anthony");
+
+    alex.getInfo();
     
     return 0;
 }

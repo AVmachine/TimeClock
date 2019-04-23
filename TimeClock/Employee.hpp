@@ -23,6 +23,7 @@ public:
     string getfName();
     string getlName();
     void getid();
+    void getInfo();
     void setfName(string s);
     void setlName(string s);
     void setid(int arr[]);

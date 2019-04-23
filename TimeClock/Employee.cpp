@@ -28,6 +28,20 @@ void Employee::getid()
     }
     cout<<endl;
 }
+
+void Employee::getInfo()
+{
+    cout<<fName<<" ";
+    cout<<lName<<" ";
+    cout<<"ID#: ";
+    for(int x = 0; x!=5; x++)
+    {
+        cout<<id[x]<<" ";
+    }
+    cout<<endl;
+    
+}
+
 void Employee::setfName(string s)
 {
     fName = s;
